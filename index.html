@@ -7,149 +7,55 @@
 <title>Nicholas & Yen Ling | Wedding Day</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
-/* Wedding Day Homepage Refresh */
-:root {
-  --cream: #FAF7F0;
-  --gold: #B49660;
-  --ink: #51483E;
-  --sage: #879481;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  box-shadow: 0 2px 18px rgba(81,72,62,.04);
-}
-
-nav a {
-  padding: 7px 5px;
-  transition: color .2s ease;
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-header.hero {
-  min-height: 78vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 85px 20px;
-  background:
-    radial-gradient(circle at 50% 25%,
-      #fffdf8 0%, #f7f0e4 75%);
-}
-
-.hero h1 {
-  font-size: clamp(43px, 7vw, 76px);
-  line-height: 1.18;
-  letter-spacing: -1.5px;
-  max-width: 900px;
-}
-
-.hero .eyebrow {
-  color: var(--gold);
-  letter-spacing: 3px;
-  font-size: 11px;
-  text-transform: uppercase;
-}
-
-.hero .ornament {
-  color: var(--gold);
-  font-size: 24px;
-  margin: 22px 0;
-}
-
-.hero .welcome {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(23px, 4vw, 35px);
-  font-style: italic;
-  margin: 10px 0;
-}
-
-.hero .hero-description {
-  max-width: 440px;
-  line-height: 1.9;
-  font-size: 14px;
-  color: #786F63;
-}
-
-.hero .hero-button {
-  margin-top: 24px;
-  padding: 16px 32px;
-  background: var(--sage);
-  color: white;
-  text-decoration: none;
-  border-radius: 40px;
-  transition: transform .2s ease, background .2s ease;
-}
-
-.hero .hero-button:hover {
-  background: #71816D;
-  transform: translateY(-2px);
-}
-
-.hero .venue {
-  margin-top: 45px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  color: var(--gold);
-}
-
-@media(max-width:600px) {
-  header.hero {
-    min-height: 82svh;
-    padding: 65px 22px;
-  }
-  .hero h1 {
-    letter-spacing: -1px;
-  }
-  nav a {
-    font-size: 11px;
-    margin: 3px 5px;
-  }
-}
-
-/* CLASSIC CONCERT PROGRAMME THEME */
-
+<style>
 :root {
   --cream: #F6F0E5;
   --gold: #B69A6B;
   --ink: #4D4038;
-  --sage: #6E302E;
   --burgundy: #6E302E;
 }
 
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
+  margin: 0;
   background: var(--cream);
   color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
 }
 
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 15px 10px;
   background: rgba(246,240,229,.97);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid #D8C8AC;
-  box-shadow: 0 3px 15px rgba(77,64,56,.04);
 }
 
 nav a {
+  display: inline-block;
+  margin: 5px 8px;
+  padding: 6px 3px;
   color: var(--burgundy);
+  text-decoration: none;
   font-size: 12px;
-  letter-spacing: .3px;
 }
 
-nav a:hover {
-  color: var(--gold);
-}
+nav a:hover { color: var(--gold); }
 
 header.concert-hero {
   min-height: 85vh;
   padding: 45px 18px;
-  background:
-    radial-gradient(circle at top,#FFFCF5,#F0E7D8);
+  background: radial-gradient(circle at top,#FFFCF5,#F0E7D8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,11 +140,10 @@ header.concert-hero {
   margin-top: 15px;
   padding: 15px 30px;
   background: var(--burgundy);
-  color: #FFF;
+  color: white;
   border-radius: 3px;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: .5px;
   transition: background .2s, transform .2s;
 }
 
@@ -254,23 +159,55 @@ header.concert-hero {
   margin-top: 35px;
 }
 
-.card {
-  border: 1px solid #D8C8AC;
-  border-radius: 4px;
-  box-shadow: 0 5px 20px rgba(77,64,56,.04);
+section {
+  padding: 65px 20px;
+  max-width: 760px;
+  margin: auto;
+  scroll-margin-top: 90px;
 }
 
-h2 {
-  color: var(--burgundy);
-}
-
-.small,.time {
+.small {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: #9E7D4E;
 }
 
+h2 {
+  font-family: 'Playfair Display',serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--burgundy);
+  margin: 12px 0 25px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #D8C8AC;
+  border-radius: 4px;
+  padding: 25px;
+  margin: 16px auto;
+  max-width: 510px;
+  box-shadow: 0 5px 20px rgba(77,64,56,.04);
+}
+
+.time {
+  font-size: 12px;
+  color: #9E7D4E;
+  letter-spacing: 2px;
+}
+
+.muted {
+  color: #8A8175;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
 footer {
+  padding: 45px 15px;
   background: #EDE2D2;
   border-top: 1px solid #D8C8AC;
+  font-size: 13px;
 }
 
 @media(max-width:600px) {
@@ -278,101 +215,140 @@ footer {
     min-height: auto;
     padding: 25px 12px;
   }
-  .concert-inner {
-    padding: 45px 16px;
-  }
-  .concert-title {
-    font-size: 43px;
-  }
-  .concert-names {
-    font-size: 29px;
-  }
+  .concert-inner { padding: 45px 16px; }
+  .concert-title { font-size: 43px; }
+  .concert-names { font-size: 29px; }
+  nav a { font-size: 11px; margin: 3px 5px; }
 }
-
-  <style>
-:root{--cream:#faf7f0;--gold:#b49660;--ink:#51483e;--sage:#879481}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;text-align:center}
-header{padding:90px 20px 65px;background:linear-gradient(#fffdf8,#f5eee2)}
-.small{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
-h1,h2{font-family:'Playfair Display',serif;font-weight:400}
-h1{font-size:clamp(40px,8vw,70px);margin:22px 0}
-h2{font-size:32px;margin:12px 0 25px}
-.subtitle{font-size:15px;line-height:1.8}
-.divider{color:var(--gold);font-size:24px;margin:25px}
-nav{position:sticky;top:0;background:#faf7f0f2;backdrop-filter:blur(12px);padding:15px 10px;z-index:10;border-bottom:1px solid #e8dfd1}
-nav a{display:inline-block;margin:7px 11px;color:var(--ink);text-decoration:none;font-size:12px}
-section{padding:65px 20px;max-width:760px;margin:auto}
-.card{background:white;border:1px solid #e8dfd1;border-radius:16px;padding:25px;margin:16px auto;max-width:510px;box-shadow:0 5px 25px #51483e08}
-.time{font-size:12px;color:var(--gold);letter-spacing:2px}
-button,.btn{display:inline-block;background:var(--sage);color:white;border:0;border-radius:30px;padding:13px 25px;font-family:inherit;text-decoration:none;cursor:pointer}
-.muted{color:#8a8175;font-size:13px;line-height:1.7}
-footer{padding:45px 15px;background:#f0e9de;font-size:13px}
 </style>
 </head>
-<body>
-<nav>
-<a href="#home">Home</a>
-<a href="#seating">My Seat</a>
-<a href="#programme">Programme</a>
-<a href="#menu">Menu</a>
-<a href="#memories">Memories</a>
-<a href="#wishes">Wishes</a>
-</nav>
 
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#seating">Reserved Seat</a>
+  <a href="#programme">Programme</a>
+  <a href="#menu">Dining</a>
+  <a href="#memories">Memories</a>
+  <a href="#wishes">Love Notes</a>
 </nav>
 
 <header id="home" class="concert-hero">
-  <!-- New concert homepage content -->
+  <div class="concert-programme">
+    <div class="concert-inner">
+
+      <div class="concert-kicker">
+        CHIJMES HALL · SINGAPORE
+      </div>
+
+      <div class="concert-ornament">
+        ✦ ─── ♫ ─── ✦
+      </div>
+
+      <div class="concert-label">
+        A Celebration in Harmony
+      </div>
+
+      <h1 class="concert-title">
+        A Symphony<br>of Love
+      </h1>
+
+      <div class="concert-featuring">
+        Featuring
+      </div>
+
+      <div class="concert-names">
+        Nicholas &amp; Yen Ling
+      </div>
+
+      <div class="concert-ornament">
+        ☀ ✧ 🍀
+      </div>
+
+      <div class="concert-rule"></div>
+
+      <div class="concert-date">
+        SUNDAY · 14 MARCH 2027
+      </div>
+
+      <p class="concert-description">
+        An afternoon of love, music and beautiful memories.
+        <br>
+        Thank you for being part of our celebration.
+      </p>
+
+      <a href="#seating" class="concert-button">
+        Enter Our Celebration
+      </a>
+
+      <div class="concert-footer">
+        FOREVER AND ALWAYS
+      </div>
+
+    </div>
+  </div>
 </header>
 
 <section id="seating">
+  <div class="small">Your Place At Our Celebration</div>
+  <h2>Find My Seat</h2>
+  <div class="card">
+    <p>Every guest has a special place in our story.</p>
+    <p class="muted">Our personalised seating finder is coming soon.</p>
+  </div>
+</section>
 
-<section id="seating">
-<div class="small">Your Place At Our Celebration</div>
-<h2>Find My Seat</h2>
-<div class="card">
-<p>Every guest has a special place in our story.</p>
-<p class="muted">Our personalised seating finder is coming soon.</p>
-</div>
-</section>
 <section id="programme">
-<div class="small">A Day To Remember</div>
-<h2>Today's Programme</h2>
-<div class="card"><div class="time">10:30 AM</div><p>Solemnisation Ceremony</p></div>
-<div class="card"><div class="time">11:00 AM</div><p>Guest Arrival & Tea Ceremony</p></div>
-<div class="card"><div class="time">11:30 AM</div><p>Wedding Lunch Begins</p></div>
-<p class="muted">More celebration details to follow.</p>
+  <div class="small">A Day To Remember</div>
+  <h2>Today's Programme</h2>
+  <div class="card">
+    <div class="time">10:30 AM</div>
+    <p>Solemnisation Ceremony</p>
+  </div>
+  <div class="card">
+    <div class="time">11:00 AM</div>
+    <p>Guest Arrival & Tea Ceremony</p>
+  </div>
+  <div class="card">
+    <div class="time">11:30 AM</div>
+    <p>Wedding Lunch Begins</p>
+  </div>
+  <p class="muted">More celebration details to follow.</p>
 </section>
+
 <section id="menu">
-<div class="small">Made With Love</div>
-<h2>Our Wedding Menu</h2>
-<div class="card">
-<p>A special six-course celebration awaits.</p>
-<p class="muted">Our full menu will be revealed here.</p>
-</div>
+  <div class="small">Made With Love</div>
+  <h2>Our Wedding Menu</h2>
+  <div class="card">
+    <p>A special six-course celebration awaits.</p>
+    <p class="muted">Our full menu will be revealed here.</p>
+  </div>
 </section>
+
 <section id="memories">
-<div class="small">Through Your Eyes</div>
-<h2>Share Our Memories</h2>
-<div class="card">
-<p>Every smile, every laugh, every little moment.</p>
-<p class="muted">Photo and video uploads will be available here once connected.</p>
-</div>
+  <div class="small">Through Your Eyes</div>
+  <h2>Share Our Memories</h2>
+  <div class="card">
+    <p>Every smile, every laugh, every little moment.</p>
+    <p class="muted">Photo and video uploads will be available here once connected.</p>
+  </div>
 </section>
+
 <section id="wishes">
-<div class="small">Words From The Heart</div>
-<h2>Leave Your Wishes</h2>
-<div class="card">
-<p>Your love and blessings mean the world to us.</p>
-<p class="muted">Our digital guestbook is coming soon.</p>
-</div>
+  <div class="small">Words From The Heart</div>
+  <h2>Leave Your Wishes</h2>
+  <div class="card">
+    <p>Your love and blessings mean the world to us.</p>
+    <p class="muted">Our digital guestbook is coming soon.</p>
+  </div>
 </section>
+
 <footer>
-<p>Lucky 🍀 &amp; Sunshine ☀️</p>
-<p>Nicholas &amp; Yen Ling · Forever and Always</p>
+  <p>Lucky 🍀 &amp; Sunshine ☀️</p>
+  <p>Nicholas &amp; Yen Ling · Forever and Always</p>
 </footer>
+
 </body>
 </html>
   
