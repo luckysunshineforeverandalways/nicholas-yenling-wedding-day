@@ -789,23 +789,13 @@ header[id] {
 /* SAMPLE SEATING LIST */
 /* Replace with confirmed guest list later */
 
+
 const seatingList = [
-  {
-    name: "Gabriel Lee",
-    table: "Table 05",
-    seat: "Seat 03"
-  },
-  {
-    name: "Amanda Tan",
-    table: "Table 08",
-    seat: "Seat 02"
-  },
-  {
-    name: "Daphne Lim",
-    table: "Table 12",
-    seat: "Seat 06"
-  }
+  { name: "Gabriel Lee", table: "Table 05" },
+  { name: "Amanda Tan", table: "Table 08" },
+  { name: "Daphne Lim", table: "Table 12" }
 ];
+
 
 /* SEARCH FOR GUEST */
 
@@ -842,15 +832,32 @@ function findSeat() {
           ${guest.name}
         </h2>
 
-        <div style="
-          font-family:'Playfair Display',serif;
-          font-size:30px;
-          color:#6E302E;
-        ">
-          ${guest.table}
-        </div>
+        
+<div class="small" style="margin-top:20px;">
+  YOUR RESERVED TABLE
+</div>
 
-        <p class="muted">${guest.seat}</p>
+<div style="
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  color:#6E302E;
+  margin:12px 0 20px;
+">
+  ${guest.table}
+</div>
+
+<div style="
+  width:90px;
+  height:1px;
+  background:#B69A6B;
+  margin:20px auto;
+"></div>
+
+<p class="italic">
+  A special place awaits you.
+</p>
+
+
 
         <p class="italic">
           We're so happy you're here.
