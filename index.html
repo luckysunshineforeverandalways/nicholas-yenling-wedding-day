@@ -75,8 +75,6 @@ section{
   scroll-margin-top:85px;
 }
 header[id]{scroll-margin-top:85px}
-
-/* CONCERT COVER */
 .concert-hero{
   min-height:85vh;
   padding:45px 18px;
@@ -146,8 +144,6 @@ header[id]{scroll-margin-top:85px}
 }
 .btn:hover{background:#8C4540}
 .btn:disabled{opacity:.6;cursor:wait}
-
-/* WELCOME LETTER */
 .letter-title{
   font-style:italic;
   font-size:clamp(25px,5vw,34px);
@@ -164,8 +160,6 @@ header[id]{scroll-margin-top:85px}
   font-size:26px;
   margin:18px 0;
 }
-
-/* INFORMATION CARDS */
 .card{
   max-width:550px;
   margin:16px auto;
@@ -183,6 +177,153 @@ header[id]{scroll-margin-top:85px}
   color:#9E7D4E;
   letter-spacing:2px;
   font-size:12px;
+}
+
+/* ACTIVITIES */
+.activity-list{
+  max-width:620px;
+  margin:25px auto;
+  display:grid;
+  gap:12px;
+  text-align:left;
+}
+.activity{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  padding:20px;
+  background:#FFFCF7;
+  border:1px solid var(--line);
+  border-radius:4px;
+}
+.activity-number{
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  width:39px;
+  height:39px;
+  border-radius:50%;
+  background:var(--burgundy);
+  color:white;
+  font-size:13px;
+}
+.activity h3{
+  font-size:22px;
+  margin:0;
+  color:var(--burgundy);
+}
+.activity p{
+  font-size:13px;
+  line-height:1.65;
+  margin:8px 0;
+  color:var(--muted);
+}
+.activity small{
+  font-size:11px;
+  color:#9E7D4E;
+}
+
+/* VENUE MAP */
+.venue-heading{margin:65px auto 22px}
+.venue-map{
+  max-width:620px;
+  margin:20px auto;
+  padding:20px;
+  background:#FFFCF7;
+  border:1px solid var(--gold);
+  border-radius:5px;
+}
+.map-stage{
+  background:#EAE0D2;
+  border:1px solid var(--line);
+  padding:15px 5px;
+  font-size:11px;
+  letter-spacing:1px;
+  color:var(--burgundy);
+}
+.map-stage span{
+  display:inline-block;
+  margin-top:7px;
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  letter-spacing:0;
+}
+.map-middle{
+  display:grid;
+  grid-template-columns:1fr 2fr 1fr;
+  gap:10px;
+  margin:15px 0;
+  min-height:245px;
+}
+.map-side{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  gap:12px;
+}
+.map-pin{
+  border:1px solid var(--gold);
+  background:#F7EDE7;
+  color:var(--burgundy);
+  border-radius:4px;
+  padding:12px 3px;
+  font-weight:600;
+  font-size:13px;
+  line-height:1.3;
+}
+.map-pin span{
+  font-weight:400;
+  font-size:11px;
+  display:inline-block;
+  margin-top:5px;
+}
+.map-neutral{
+  border:1px solid var(--line);
+  padding:12px 3px;
+  color:var(--muted);
+  font-size:11px;
+  background:#F6F0E5;
+}
+.map-tables{
+  border:1px dashed var(--line);
+  padding:18px 6px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:10px;
+  color:var(--muted);
+  font-size:12px;
+}
+.map-tables span{
+  border:1px solid var(--line);
+  border-radius:50%;
+  padding:13px 3px;
+  background:white;
+}
+.map-tables small{
+  grid-column:1/-1;
+  letter-spacing:1px;
+  font-size:9px;
+}
+.map-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;
+}
+.map-toilet{
+  border:1px solid var(--gold);
+  padding:8px 2px;
+  color:var(--burgundy);
+  font-size:18px;
+}
+.map-toilet span{font-size:10px}
+.map-entrance{
+  border-top:1px solid var(--line);
+  margin-top:14px;
+  padding-top:14px;
+  color:var(--burgundy);
+  font-size:11px;
+  letter-spacing:1px;
 }
 
 /* STRING QUARTET */
@@ -234,8 +375,6 @@ header[id]{scroll-margin-top:85px}
   font-size:12px;
   flex-shrink:0;
 }
-
-/* FOOTER */
 footer{
   padding:45px 20px;
   background:#EDE2D2;
@@ -261,6 +400,14 @@ footer{
   .concert-names{font-size:29px}
   .concert-date{font-size:10px}
   section,header[id]{scroll-margin-top:100px}
+  .venue-map{padding:10px}
+  .map-middle{gap:5px;min-height:210px}
+  .map-pin{font-size:11px;padding:10px 2px}
+  .map-pin span{font-size:9px}
+  .map-neutral{font-size:9px}
+  .map-tables{gap:5px;padding:9px 3px}
+  .map-tables span{font-size:10px;padding:12px 1px}
+  .activity h3{font-size:20px}
 }
 </style>
 </head>
@@ -272,7 +419,7 @@ footer{
   <a href="#home">Home</a>
   <a href="#welcome">Welcome</a>
   <a href="#seating">Reserved Seat</a>
-  <a href="#programme">Programme</a>
+  <a href="#activities">Activities</a>
   <a href="#music">The Music</a>
   <a href="#menu">Dining</a>
   <a href="#memories">Memories</a>
@@ -347,7 +494,7 @@ footer{
   </div>
 </section>
 
-<!-- LIVE SEATING FINDER -->
+<!-- RESERVED SEAT -->
 <section id="seating">
   <div class="small">Your Place At Our Celebration</div>
   <h2>Find Your Reserved Seat</h2>
@@ -361,7 +508,7 @@ footer{
       id="guestName"
       placeholder="Enter your full name"
       autocomplete="name"
-      maxlength="120"
+      maxlength="100"
       style="
         width:100%;
         max-width:350px;
@@ -386,25 +533,146 @@ footer{
   </div>
 </section>
 
-<!-- WEDDING DAY PROGRAMME -->
-<section id="programme">
-  <div class="small">A Day To Remember</div>
-  <h2>Order of the Day</h2>
-  <div class="ornament">✦ ─── ✦ ─── ✦</div>
-  <div class="card">
-    <div class="time">10:30 AM</div>
-    <p>Solemnisation Ceremony</p>
+<!-- ACTIVITIES & VENUE GUIDE -->
+<section id="activities">
+  <div class="small">The Little Joys of Our Day</div>
+  <h2>Explore Our Celebration</h2>
+  <p class="description italic">
+    Wander, discover and make a little memory with us.
+  </p>
+  <div class="ornament">✦ ─── ♫ ─── ✦</div>
+
+  <div class="activity-list">
+    <article class="activity">
+      <span class="activity-number">01</span>
+      <div>
+        <h3>Welcome &amp; Reception</h3>
+        <p>
+          Find your reserved table and begin the celebration.
+        </p>
+        <small>At the main entrance</small>
+      </div>
+    </article>
+
+    <article class="activity">
+      <span class="activity-number">02</span>
+      <div>
+        <h3>Send Us a Postcard</h3>
+        <p>
+          Write us a little note, a memory or a wish
+          for our next chapter.
+        </p>
+        <small>Beside reception</small>
+      </div>
+    </article>
+
+    <article class="activity">
+      <span class="activity-number">03</span>
+      <div>
+        <h3>Magnet Photo Booth</h3>
+        <p>
+          Strike a pose and take home a little keepsake.
+        </p>
+        <small>Left side, near the hall entrance</small>
+      </div>
+    </article>
+
+    <article class="activity">
+      <span class="activity-number">04</span>
+      <div>
+        <h3>Petale Tea DIY Bar</h3>
+        <p>
+          Create your own tea blend, lovingly made by you.
+        </p>
+        <small>Left side of the banquet hall</small>
+      </div>
+    </article>
+
+    <article class="activity">
+      <span class="activity-number">05</span>
+      <div>
+        <h3>Live String Quartet</h3>
+        <p>
+          Let the music accompany our special celebration.
+        </p>
+        <small>At the front, near the stage</small>
+      </div>
+    </article>
   </div>
-  <div class="card">
-    <div class="time">11:00 AM</div>
-    <p>Guest Arrival &amp; Tea Ceremony</p>
+
+  <!-- SIMPLIFIED VENUE MAP -->
+  <div class="venue-heading">
+    <div class="small">Find Your Way</div>
+    <h2>CHIJMES Venue Guide</h2>
+    <p class="muted">
+      A simplified guide based on our proposed wedding layout.
+      Not to scale.
+    </p>
   </div>
-  <div class="card">
-    <div class="time">11:30 AM</div>
-    <p>Wedding Lunch Begins</p>
+
+  <div class="venue-map"
+       role="img"
+       aria-label="Simplified CHIJMES Hall layout. Stage and string quartet at the front. Petale Tea and Magnet Photo Booth on the left. Guest tables in the middle. Reception and postcards near the main entrance. Toilet directional signage on the right of reception.">
+
+    <div class="map-stage">
+      MAIN SCREEN &amp; STAGE
+      <br>
+      <span>♫ Live String Quartet</span>
+    </div>
+
+    <div class="map-middle">
+      <div class="map-side">
+        <div class="map-pin">
+          04<br><span>Petale Tea</span>
+        </div>
+        <div class="map-pin">
+          03<br><span>Magnet Booth</span>
+        </div>
+      </div>
+
+      <div class="map-tables">
+        <span>VIP 1</span>
+        <span>VIP 2</span>
+        <span>3 · 5 · 7 · 9</span>
+        <span>4 · 6 · 8 · 10</span>
+        <small>GUEST TABLES</small>
+      </div>
+
+      <div class="map-side">
+        <div class="map-neutral">Mobile Bar</div>
+        <div class="map-neutral">Drinks</div>
+      </div>
+    </div>
+
+    <div class="map-bottom">
+      <div class="map-pin">
+        02<br><span>Postcards</span>
+      </div>
+      <div class="map-pin">
+        01<br><span>Reception</span>
+      </div>
+      <div class="map-toilet">
+        🚻<br><span>Toilet signage →</span>
+      </div>
+    </div>
+
+    <div class="map-entrance">
+      ↓ MAIN ENTRANCE / EXIT ↓
+    </div>
   </div>
+
   <p class="muted">
-    Further programme details will be announced.
+    🚻 <strong>Looking for the washrooms?</strong>
+    Follow the toilet directional signage on the
+    right side of reception, near the main entrance.
+    Please follow CHIJMES venue signs for the actual
+    washroom entrance.
+  </p>
+
+  <p class="muted">
+    Activity locations and table arrangements are based
+    on the proposed floor plan and may change before
+    the wedding.
   </p>
 </section>
 
@@ -422,17 +690,25 @@ footer{
 
       <div class="music-act">
         <h3>ACT I · THE CEREMONY</h3>
+
         <div class="song">
           <div>
             <div class="song-title">Canon in D</div>
-            <div class="song-composer">Johann Pachelbel</div>
+            <div class="song-composer">
+              Johann Pachelbel
+            </div>
           </div>
           <div class="song-number">01</div>
         </div>
+
         <div class="song">
           <div>
-            <div class="song-title">A Thousand Years</div>
-            <div class="song-composer">Christina Perri</div>
+            <div class="song-title">
+              A Thousand Years
+            </div>
+            <div class="song-composer">
+              Christina Perri
+            </div>
           </div>
           <div class="song-number">02</div>
         </div>
@@ -440,26 +716,35 @@ footer{
 
       <div class="music-act">
         <h3>ACT II · THE CELEBRATION</h3>
+
         <div class="song">
           <div>
             <div class="song-title">
               Can't Help Falling in Love
             </div>
-            <div class="song-composer">Elvis Presley</div>
+            <div class="song-composer">
+              Elvis Presley
+            </div>
           </div>
           <div class="song-number">03</div>
         </div>
+
         <div class="song">
           <div>
             <div class="song-title">Perfect</div>
-            <div class="song-composer">Ed Sheeran</div>
+            <div class="song-composer">
+              Ed Sheeran
+            </div>
           </div>
           <div class="song-number">04</div>
         </div>
+
         <div class="song">
           <div>
             <div class="song-title">Marry You</div>
-            <div class="song-composer">Bruno Mars</div>
+            <div class="song-composer">
+              Bruno Mars
+            </div>
           </div>
           <div class="song-number">05</div>
         </div>
@@ -508,7 +793,9 @@ footer{
   <h2>Notes of Love</h2>
   <div class="ornament">✦ ─── ♡ ─── ✦</div>
   <div class="card">
-    <p>Your love and blessings mean the world to us.</p>
+    <p>
+      Your love and blessings mean the world to us.
+    </p>
     <p class="muted">
       Our digital guestbook is coming soon.
     </p>
@@ -528,7 +815,7 @@ footer{
 const SEATING_API =
 'https://script.google.com/macros/s/AKfycbz0cc2R-Po5kcISgIefqNqakM1smujClnLFXG43OgpXkoFk2EPEkMli5BwwkNNs3Pah/exec';
 
-let activeLookup = 0;
+let lookupCounter = 0;
 
 function seatMessage(message) {
   const result = document.getElementById('seatResult');
@@ -584,17 +871,12 @@ function findSeat() {
   const name = document.getElementById('guestName')
     .value.trim().replace(/\s+/g,' ');
 
-  if (!name) {
+  if (!name || name.length < 3 || name.length > 100) {
     seatMessage('Please enter your full name.');
     return;
   }
 
-  if (name.length > 120) {
-    seatMessage('Please enter a shorter name.');
-    return;
-  }
-
-  const id = ++activeLookup;
+  const id = ++lookupCounter;
   seatMessage('Searching for your reserved table…');
 
   const button = document.getElementById('seatButton');
@@ -612,15 +894,12 @@ function findSeat() {
     clearTimeout(timeout);
     script.remove();
     delete window[callback];
-
-    if (id === activeLookup) {
-      button.disabled = false;
-    }
+    button.disabled = false;
     return true;
   }
 
   window[callback] = function(data) {
-    if (!cleanup() || id !== activeLookup) return;
+    if (!cleanup()) return;
 
     if (data && data.status === 'found'
         && data.name && data.table) {
@@ -632,14 +911,12 @@ function findSeat() {
         'Please check again closer to the celebration.'
       );
 
-    } else if (data && data.status === 'multiple') {
+    } else if (data && data.status === 'ambiguous') {
       seatMessage(
         'Please ask our reception team to help confirm your table.'
       );
 
-    } else if (data &&
-        (data.status === 'not_found' ||
-         data.status === 'not-found')) {
+    } else if (data && data.status === 'not_found') {
       seatMessage(
         "We couldn't find your name. " +
         "Please check the spelling or ask our reception team."
@@ -647,14 +924,13 @@ function findSeat() {
 
     } else {
       seatMessage(
-        'The seating finder is temporarily unavailable. ' +
-        'Please ask our reception team.'
+        'The seating finder is temporarily unavailable.'
       );
     }
   };
 
   script.onerror = function() {
-    if (cleanup() && id === activeLookup) {
+    if (cleanup()) {
       seatMessage(
         'Unable to connect right now. Please try again later.'
       );
@@ -662,7 +938,7 @@ function findSeat() {
   };
 
   timeout = setTimeout(function() {
-    if (cleanup() && id === activeLookup) {
+    if (cleanup()) {
       seatMessage(
         'The search took too long. Please try again.'
       );
