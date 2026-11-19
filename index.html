@@ -519,7 +519,8 @@ header[id] {
   </div>
 </section>
 
-<!-- SEATING -->
+
+<!-- PERSONALISED SEATING FINDER -->
 
 <section id="seating">
 
@@ -527,19 +528,52 @@ header[id] {
     Your Place At Our Celebration
   </div>
 
-  <h2>Your Reserved Seat</h2>
+  <h2>Find Your Reserved Seat</h2>
 
   <div class="card">
+
     <p>
       Every guest has a special place in our story.
     </p>
 
     <p class="muted">
-      Our personalised seating finder is coming soon.
+      Enter your full name to discover your table.
     </p>
+
+    <input
+      type="text"
+      id="guestName"
+      placeholder="Enter your full name"
+      autocomplete="name"
+      style="
+        width:100%;
+        max-width:350px;
+        padding:15px;
+        margin:15px 0;
+        border:1px solid #D8C8AC;
+        border-radius:4px;
+        background:#FFFCF7;
+        font-family:inherit;
+        font-size:14px;
+        text-align:center;
+      "
+    >
+
+    <br>
+
+    <button class="btn" onclick="findSeat()">
+      Find My Seat
+    </button>
+
+    <div id="seatResult"
+         aria-live="polite"
+         style="margin-top:25px;">
+    </div>
+
   </div>
 
 </section>
+
 
 <!-- WEDDING DAY PROGRAMME -->
 
@@ -749,6 +783,102 @@ header[id] {
   <p class="italic">Forever and Always</p>
   <p class="small">14 March 2027 · CHIJMES Hall</p>
 </footer>
+
+<script>
+
+/* SAMPLE SEATING LIST */
+/* Replace with confirmed guest list later */
+
+const seatingList = [
+  {
+    name: "Gabriel Lee",
+    table: "Table 05",
+    seat: "Seat 03"
+  },
+  {
+    name: "Amanda Tan",
+    table: "Table 08",
+    seat: "Seat 02"
+  },
+  {
+    name: "Daphne Lim",
+    table: "Table 12",
+    seat: "Seat 06"
+  }
+];
+
+/* SEARCH FOR GUEST */
+
+function findSeat() {
+
+  const input = document.getElementById("guestName");
+  const result = document.getElementById("seatResult");
+
+  const searchName = input.value
+    .trim()
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+
+  if (!searchName) {
+    result.textContent = "Please enter your full name.";
+    return;
+  }
+
+  const guest = seatingList.find(person =>
+    person.name.toLowerCase() === searchName
+  );
+
+  if (guest) {
+
+    result.innerHTML = `
+      <div style="
+        border:1px solid #B69A6B;
+        padding:25px;
+        background:#F8F3E9;
+      ">
+        <div class="small">Welcome</div>
+
+        <h2 style="margin:15px 0;">
+          ${guest.name}
+        </h2>
+
+        <div style="
+          font-family:'Playfair Display',serif;
+          font-size:30px;
+          color:#6E302E;
+        ">
+          ${guest.table}
+        </div>
+
+        <p class="muted">${guest.seat}</p>
+
+        <p class="italic">
+          We're so happy you're here.
+        </p>
+      </div>
+    `;
+
+  } else {
+
+    result.textContent =
+      "We couldn't find your name. " +
+      "Please check the spelling or ask our reception team.";
+
+  }
+}
+
+/* ALLOW ENTER KEY TO SEARCH */
+
+document.getElementById("guestName")
+  .addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+      findSeat();
+    }
+
+  });
+
+</script>
 
 </body>
 </html>
