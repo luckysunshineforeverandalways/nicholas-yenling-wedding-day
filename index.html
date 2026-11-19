@@ -330,6 +330,70 @@ footer {
     font-size: 10px;
   }
 }
+/* ALIGNMENT AND NAVIGATION FIX */
+
+/* Keep all concert pages the same width */
+.concert-hero .frame,
+#welcome .frame,
+#music .music-frame {
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Keep the inner borders consistent */
+.concert-hero .frame-inner,
+#welcome .frame-inner,
+#music .music-inner {
+  border: 1px solid var(--line);
+}
+
+/* Reduce excessive space before sections */
+section {
+  padding-top: 35px;
+  padding-bottom: 55px;
+}
+
+/* Position sections below sticky navigation */
+section,
+header[id] {
+  scroll-margin-top: 85px;
+}
+
+/* Make music programme start near its anchor */
+#music {
+  padding-top: 15px;
+}
+
+/* Keep welcome page neatly aligned */
+#welcome {
+  padding-top: 35px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .concert-hero .frame,
+  #welcome .frame,
+  #music .music-frame {
+    max-width: 100%;
+  }
+
+  section {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+
+  #music {
+    padding-top: 12px;
+  }
+
+  section,
+  header[id] {
+    scroll-margin-top: 100px;
+  }
+}
+
 </style>
 </head>
 
