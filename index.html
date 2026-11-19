@@ -7,6 +7,120 @@
 <title>Nicholas & Yen Ling | Wedding Day</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
+/* WELCOME LETTER & QUARTET PROGRAMME */
+
+.welcome-letter {
+  max-width: 760px;
+  padding: 65px 20px;
+  margin: auto;
+}
+
+.letter-frame {
+  border: 1px solid var(--gold);
+  padding: 9px;
+  background: #F8F3E9;
+}
+
+.letter-inner {
+  border: 1px solid #D8C8AC;
+  padding: 45px 35px;
+}
+
+.letter-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(25px, 4vw, 34px);
+  color: var(--burgundy);
+  margin: 20px 0 28px;
+}
+
+.letter-inner p {
+  max-width: 520px;
+  margin: 18px auto;
+  font-size: 14px;
+  line-height: 2;
+  color: #655449;
+}
+
+.letter-signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: var(--ink);
+  margin-top: 12px;
+}
+
+.quartet-section {
+  max-width: 760px;
+  margin: auto;
+  padding: 65px 20px;
+}
+
+.quartet-frame {
+  border: 1px solid var(--gold);
+  padding: 9px;
+  background: #F8F3E9;
+}
+
+.quartet-inner {
+  border: 1px solid #D8C8AC;
+  padding: 45px 35px;
+}
+
+.quartet-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #806A56;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.quartet-act {
+  text-align: left;
+  margin-top: 35px;
+}
+
+.quartet-act h3 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--burgundy);
+  border-bottom: 1px solid #D8C8AC;
+  padding-bottom: 12px;
+}
+
+.song {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #E7DCCC;
+  text-align: left;
+}
+
+.song-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.song-composer {
+  font-size: 12px;
+  color: #806A56;
+  margin-top: 5px;
+}
+
+.song-number {
+  font-size: 12px;
+  color: var(--gold);
+}
+
+@media(max-width:600px) {
+  .letter-inner,
+  .quartet-inner {
+    padding: 35px 18px;
+  }
+}
+
 <style>
 :root {
   --cream: #F6F0E5;
@@ -220,19 +334,26 @@ footer {
   .concert-names { font-size: 29px; }
   nav a { font-size: 11px; margin: 3px 5px; }
 }
+  section {
+  scroll-margin-top: 110px;
+}
 </style>
 </head>
 
 <body>
 
+
 <nav>
   <a href="#home">Home</a>
+  <a href="#welcome">Welcome</a>
   <a href="#seating">Reserved Seat</a>
   <a href="#programme">Programme</a>
+  <a href="#music">The Music</a>
   <a href="#menu">Dining</a>
   <a href="#memories">Memories</a>
   <a href="#wishes">Love Notes</a>
 </nav>
+
 
 <header id="home" class="concert-hero">
   <div class="concert-programme">
@@ -290,6 +411,54 @@ footer {
   </div>
 </header>
 
+<section class="welcome-letter" id="welcome">
+
+  <div class="letter-frame">
+    <div class="letter-inner">
+
+      <div class="small">A Note From The Couple</div>
+
+      <h2 class="letter-title">
+        To Our Dearest Family &amp; Friends,
+      </h2>
+
+      <p>
+        Every beautiful melody is made of many notes,
+        just as our story is made of countless moments
+        and the wonderful people who have been
+        part of them.
+      </p>
+
+      <p>
+        Through every season of life, your love,
+        kindness and support have meant more to us
+        than words can express.
+      </p>
+
+      <p>
+        Today, as we begin a new chapter together,
+        we're grateful to have you here to share
+        our joy, laughter and beautiful memories.
+      </p>
+
+      <p style="font-style:italic;color:#6E302E;">
+        Thank you for being part of our story,
+        and for making this day even more meaningful.
+      </p>
+
+      <p>With all our love,</p>
+
+      <div class="letter-signature">
+        Nicholas &amp; Yen Ling
+      </div>
+
+      <div class="concert-ornament">☀ ✧ 🍀</div>
+
+    </div>
+  </div>
+
+</section>
+
 <section id="seating">
   <div class="small">Your Place At Our Celebration</div>
   <h2>Find My Seat</h2>
@@ -315,6 +484,83 @@ footer {
     <p>Wedding Lunch Begins</p>
   </div>
   <p class="muted">More celebration details to follow.</p>
+</section>
+
+<section id="music" class="quartet-section">
+
+  <div class="quartet-frame">
+    <div class="quartet-inner">
+
+      <div class="small">Live String Quartet</div>
+
+      <h2>The Music of Our Day</h2>
+
+      <div class="concert-ornament">
+        ♫ ─── ✦ ─── ♫
+      </div>
+
+      <p class="quartet-subtitle">
+        Every love story has its own melody.
+        These are the songs that accompany ours.
+      </p>
+
+      <div class="quartet-act">
+        <h3>ACT I · THE CEREMONY</h3>
+
+        <div class="song">
+          <div>
+            <div class="song-title">Canon in D</div>
+            <div class="song-composer">Johann Pachelbel</div>
+          </div>
+          <div class="song-number">01</div>
+        </div>
+
+        <div class="song">
+          <div>
+            <div class="song-title">A Thousand Years</div>
+            <div class="song-composer">Christina Perri</div>
+          </div>
+          <div class="song-number">02</div>
+        </div>
+      </div>
+
+      <div class="quartet-act">
+        <h3>ACT II · THE CELEBRATION</h3>
+
+        <div class="song">
+          <div>
+            <div class="song-title">
+              Can't Help Falling in Love
+            </div>
+            <div class="song-composer">Elvis Presley</div>
+          </div>
+          <div class="song-number">03</div>
+        </div>
+
+        <div class="song">
+          <div>
+            <div class="song-title">Perfect</div>
+            <div class="song-composer">Ed Sheeran</div>
+          </div>
+          <div class="song-number">04</div>
+        </div>
+
+        <div class="song">
+          <div>
+            <div class="song-title">Marry You</div>
+            <div class="song-composer">Bruno Mars</div>
+          </div>
+          <div class="song-number">05</div>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:35px;">
+        Illustrative repertoire · Subject to confirmation
+      </p>
+
+    </div>
+  </div>
+
 </section>
 
 <section id="menu">
