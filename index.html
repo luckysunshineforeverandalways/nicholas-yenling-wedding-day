@@ -4,403 +4,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Nicholas & Yen Ling | A Symphony of Love</title>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --cream: #F6F0E5;
-  --paper: #F8F3E9;
-  --gold: #B69A6B;
-  --burgundy: #6E302E;
-  --ink: #4D4038;
-  --muted: #806A56;
-  --line: #D8C8AC;
+  --cream:#F6F0E5;
+  --paper:#F8F3E9;
+  --gold:#B69A6B;
+  --burgundy:#6E302E;
+  --ink:#4D4038;
+  --muted:#806A56;
+  --line:#D8C8AC;
 }
-
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  text-align:center;
 }
-
-html {
-  scroll-behavior: smooth;
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  overflow-x:auto;
+  padding:16px 12px;
+  background:rgba(246,240,229,.97);
+  border-bottom:1px solid var(--line);
+  scrollbar-width:none;
 }
-
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  text-align: center;
+nav::-webkit-scrollbar{display:none}
+nav a{
+  flex-shrink:0;
+  color:var(--burgundy);
+  text-decoration:none;
+  font-size:12px;
+  padding:6px;
 }
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 16px 12px;
-  background: rgba(246,240,229,.97);
-  border-bottom: 1px solid var(--line);
-  scrollbar-width: none;
+nav a:hover{color:var(--gold)}
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
 }
-
-nav::-webkit-scrollbar {
-  display: none;
+h2{
+  color:var(--burgundy);
+  font-size:clamp(29px,5vw,38px);
+  margin:14px 0 25px;
 }
-
-nav a {
-  flex-shrink: 0;
-  color: var(--burgundy);
-  text-decoration: none;
-  font-size: 12px;
-  padding: 6px;
+.small{
+  font-size:11px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:#9E7D4E;
 }
-
-nav a:hover {
-  color: var(--gold);
+.ornament{
+  color:var(--gold);
+  font-size:23px;
+  margin:25px 0;
 }
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
+section{
+  max-width:800px;
+  margin:auto;
+  padding:35px 20px 55px;
+  scroll-margin-top:85px;
 }
-
-h2 {
-  color: var(--burgundy);
-  font-size: clamp(29px,5vw,38px);
-  margin: 14px 0 25px;
-}
-
-.small {
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #9E7D4E;
-}
-
-.ornament {
-  color: var(--gold);
-  font-size: 23px;
-  margin: 25px 0;
-}
-
-section {
-  max-width: 800px;
-  margin: auto;
-  padding: 65px 20px;
-  scroll-margin-top: 90px;
-}
-
-header {
-  scroll-margin-top: 90px;
-}
+header[id]{scroll-margin-top:85px}
 
 /* CONCERT COVER */
-
-.concert-hero {
-  min-height: 85vh;
-  padding: 45px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(
-    circle at top,
-    #FFFCF5,
-    #F0E7D8
-  );
+.concert-hero{
+  min-height:85vh;
+  padding:45px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at top,#FFFCF5,#F0E7D8);
 }
-
-.frame {
-  width: 100%;
-  max-width: 650px;
-  padding: 9px;
-  background: var(--paper);
-  border: 1px solid var(--gold);
-  box-shadow: 0 15px 45px rgba(77,64,56,.07);
+.frame{
+  width:100%;
+  max-width:700px;
+  margin:auto;
+  padding:9px;
+  background:var(--paper);
+  border:1px solid var(--gold);
+  box-shadow:0 15px 45px rgba(77,64,56,.07);
 }
-
-.frame-inner {
-  border: 1px solid var(--line);
-  padding: 50px 30px;
+.frame-inner{
+  border:1px solid var(--line);
+  padding:50px 30px;
 }
-
-.concert-title {
-  font-size: clamp(43px,8vw,68px);
-  line-height: 1.18;
-  margin: 20px 0;
+.concert-title{
+  font-size:clamp(43px,8vw,68px);
+  line-height:1.18;
+  margin:20px 0;
 }
-
-.concert-names {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(27px,5vw,39px);
-  margin: 20px 0;
+.concert-names{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(27px,5vw,39px);
+  margin:20px 0;
 }
-
-.italic {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  color: var(--muted);
+.italic{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  color:var(--muted);
 }
-
-.concert-date {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--burgundy);
+.concert-date{
+  font-size:12px;
+  letter-spacing:2px;
+  color:var(--burgundy);
 }
-
-.description {
-  font-size: 14px;
-  line-height: 1.9;
-  color: var(--muted);
-  max-width: 480px;
-  margin: 20px auto;
+.description{
+  font-size:14px;
+  line-height:1.9;
+  color:var(--muted);
+  max-width:480px;
+  margin:20px auto;
 }
-
-.rule {
-  width: 110px;
-  height: 1px;
-  background: var(--gold);
-  margin: 28px auto;
+.rule{
+  width:110px;
+  height:1px;
+  background:var(--gold);
+  margin:28px auto;
 }
-
-.btn {
-  display: inline-block;
-  background: var(--burgundy);
-  color: white;
-  text-decoration: none;
-  padding: 15px 28px;
-  margin-top: 15px;
-  border-radius: 3px;
-  font-size: 13px;
-  border: 0;
-  cursor: pointer;
+.btn{
+  display:inline-block;
+  background:var(--burgundy);
+  color:white;
+  text-decoration:none;
+  padding:15px 28px;
+  margin-top:15px;
+  border-radius:3px;
+  font-size:13px;
+  font-family:inherit;
+  border:0;
+  cursor:pointer;
 }
-
-.btn:hover {
-  background: #8C4540;
-}
+.btn:hover{background:#8C4540}
+.btn:disabled{opacity:.6;cursor:wait}
 
 /* WELCOME LETTER */
-
-.letter-title {
-  font-style: italic;
-  font-size: clamp(25px,5vw,34px);
+.letter-title{
+  font-style:italic;
+  font-size:clamp(25px,5vw,34px);
 }
-
-.letter-text {
-  max-width: 520px;
-  margin: 18px auto;
-  font-size: 14px;
-  line-height: 2;
-  color: #655449;
+.letter-text{
+  max-width:520px;
+  margin:18px auto;
+  font-size:14px;
+  line-height:2;
+  color:#655449;
 }
-
-.signature {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  margin: 18px 0;
+.signature{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  margin:18px 0;
 }
 
 /* INFORMATION CARDS */
-
-.card {
-  max-width: 550px;
-  margin: 16px auto;
-  padding: 26px;
-  background: #FFFCF7;
-  border: 1px solid var(--line);
-  border-radius: 4px;
+.card{
+  max-width:550px;
+  margin:16px auto;
+  padding:26px;
+  background:#FFFCF7;
+  border:1px solid var(--line);
+  border-radius:4px;
 }
-
-.muted {
-  font-size: 13px;
-  color: #8A8175;
-  line-height: 1.8;
+.muted{
+  font-size:13px;
+  color:#8A8175;
+  line-height:1.8;
 }
-
-.time {
-  color: #9E7D4E;
-  letter-spacing: 2px;
-  font-size: 12px;
+.time{
+  color:#9E7D4E;
+  letter-spacing:2px;
+  font-size:12px;
 }
 
 /* STRING QUARTET */
-
-.music-frame {
-  width: 100%;
-  max-width: 700px;
-  padding: 9px;
-  margin: auto;
-  background: var(--paper);
-  border: 1px solid var(--gold);
+.music-frame{
+  width:100%;
+  max-width:700px;
+  padding:9px;
+  margin:auto;
+  background:var(--paper);
+  border:1px solid var(--gold);
 }
-
-.music-inner {
-  border: 1px solid var(--line);
-  padding: 45px 35px;
+.music-inner{
+  border:1px solid var(--line);
+  padding:45px 35px;
 }
-
-.music-act {
-  margin-top: 38px;
-  text-align: left;
+.music-act{
+  margin-top:38px;
+  text-align:left;
 }
-
-.music-act h3 {
-  color: var(--burgundy);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
+.music-act h3{
+  color:var(--burgundy);
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:12px;
+  letter-spacing:2px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--line);
 }
-
-.song {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 16px 0;
-  border-bottom: 1px solid #E7DCCC;
-  text-align: left;
+.song{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:16px 0;
+  border-bottom:1px solid #E7DCCC;
+  text-align:left;
 }
-
-.song-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+.song-title{
+  font-family:'Playfair Display',serif;
+  font-size:18px;
 }
-
-.song-composer {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 5px;
+.song-composer{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:5px;
 }
-
-.song-number {
-  color: var(--gold);
-  font-size: 12px;
-  flex-shrink: 0;
+.song-number{
+  color:var(--gold);
+  font-size:12px;
+  flex-shrink:0;
 }
 
 /* FOOTER */
-
-footer {
-  padding: 45px 20px;
-  background: #EDE2D2;
-  border-top: 1px solid var(--line);
-  font-size: 13px;
+footer{
+  padding:45px 20px;
+  background:#EDE2D2;
+  border-top:1px solid var(--line);
+  font-size:13px;
 }
+
+/* ALIGNMENT */
+#music{padding-top:15px}
+#welcome{padding-top:35px}
 
 /* MOBILE */
-
-@media (max-width:600px) {
-  nav {
-    justify-content: flex-start;
+@media(max-width:600px){
+  nav{justify-content:flex-start}
+  .concert-hero{
+    min-height:auto;
+    padding:25px 12px;
   }
-
-  .concert-hero {
-    min-height: auto;
-    padding: 25px 12px;
-  }
-
-  .frame-inner,
-  .music-inner {
-    padding: 38px 18px;
-  }
-
-  section {
-    padding: 50px 15px;
-  }
-
-  .concert-title {
-    font-size: 43px;
-  }
-
-  .concert-names {
-    font-size: 29px;
-  }
-
-  .concert-date {
-    font-size: 10px;
-  }
+  .frame-inner,.music-inner{padding:38px 18px}
+  section{padding:25px 15px 40px}
+  #music{padding-top:12px}
+  .concert-title{font-size:43px}
+  .concert-names{font-size:29px}
+  .concert-date{font-size:10px}
+  section,header[id]{scroll-margin-top:100px}
 }
-/* ALIGNMENT AND NAVIGATION FIX */
-
-/* Keep all concert pages the same width */
-.concert-hero .frame,
-#welcome .frame,
-#music .music-frame {
-  width: 100%;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Keep the inner borders consistent */
-.concert-hero .frame-inner,
-#welcome .frame-inner,
-#music .music-inner {
-  border: 1px solid var(--line);
-}
-
-/* Reduce excessive space before sections */
-section {
-  padding-top: 35px;
-  padding-bottom: 55px;
-}
-
-/* Position sections below sticky navigation */
-section,
-header[id] {
-  scroll-margin-top: 85px;
-}
-
-/* Make music programme start near its anchor */
-#music {
-  padding-top: 15px;
-}
-
-/* Keep welcome page neatly aligned */
-#welcome {
-  padding-top: 35px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .concert-hero .frame,
-  #welcome .frame,
-  #music .music-frame {
-    max-width: 100%;
-  }
-
-  section {
-    padding-top: 25px;
-    padding-bottom: 40px;
-  }
-
-  #music {
-    padding-top: 12px;
-  }
-
-  section,
-  header[id] {
-    scroll-margin-top: 100px;
-  }
-}
-
 </style>
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
-
 <nav aria-label="Wedding day navigation">
   <a href="#home">Home</a>
   <a href="#welcome">Welcome</a>
@@ -413,138 +280,88 @@ header[id] {
 </nav>
 
 <!-- CONCERT COVER -->
-
 <header id="home" class="concert-hero">
   <div class="frame">
     <div class="frame-inner">
-
-      <div class="small">
-        CHIJMES HALL · SINGAPORE
-      </div>
-
-      <div class="ornament">
-        ✦ ─── ♫ ─── ✦
-      </div>
-
-      <div class="small" style="color:#6E302E;">
+      <div class="small">CHIJMES HALL · SINGAPORE</div>
+      <div class="ornament">✦ ─── ♫ ─── ✦</div>
+      <div class="small" style="color:#6E302E">
         A Celebration in Harmony
       </div>
-
-      <h1 class="concert-title">
-        A Symphony<br>of Love
-      </h1>
-
+      <h1 class="concert-title">A Symphony<br>of Love</h1>
       <p class="italic">Featuring</p>
-
       <div class="concert-names">
         Nicholas &amp; Yen Ling
       </div>
-
-      <div class="ornament">
-        ☀ ✧ 🍀
-      </div>
-
+      <div class="ornament">☀ ✧ 🍀</div>
       <div class="rule"></div>
-
       <div class="concert-date">
         SUNDAY · 14 MARCH 2027
       </div>
-
       <p class="description">
-        An afternoon of love, music and
-        beautiful memories.
+        An afternoon of love, music and beautiful memories.
         <br>
         Thank you for being part of our celebration.
       </p>
-
       <a href="#welcome" class="btn">
         Enter Our Celebration
       </a>
-
-      <p class="small" style="margin-top:35px;">
+      <p class="small" style="margin-top:35px">
         FOREVER AND ALWAYS
       </p>
-
     </div>
   </div>
 </header>
 
 <!-- WELCOME LETTER -->
-
 <section id="welcome">
-  <div class="frame" style="margin:auto;">
+  <div class="frame">
     <div class="frame-inner">
-
-      <div class="small">
-        A Note From The Couple
-      </div>
-
+      <div class="small">A Note From The Couple</div>
       <h2 class="letter-title">
         To Our Dearest Family &amp; Friends,
       </h2>
-
       <p class="letter-text">
         Every beautiful melody is made of many notes,
         just as our story is made of countless moments
-        and the wonderful people who have been
-        part of them.
+        and the wonderful people who have been part of them.
       </p>
-
       <p class="letter-text">
         Through every season of life, your love,
         kindness and support have meant more to us
         than words can express.
       </p>
-
       <p class="letter-text">
         Today, as we begin a new chapter together,
         we're grateful to have you here to share
         our joy, laughter and beautiful memories.
       </p>
-
       <p class="letter-text italic">
         Thank you for being part of our story,
         and for making this day even more meaningful.
       </p>
-
       <p class="italic">With all our love,</p>
-
-      <div class="signature">
-        Nicholas &amp; Yen Ling
-      </div>
-
+      <div class="signature">Nicholas &amp; Yen Ling</div>
       <div class="ornament">☀ ✧ 🍀</div>
-
     </div>
   </div>
 </section>
 
-
-<!-- PERSONALISED SEATING FINDER -->
-
+<!-- LIVE SEATING FINDER -->
 <section id="seating">
-
-  <div class="small">
-    Your Place At Our Celebration
-  </div>
-
+  <div class="small">Your Place At Our Celebration</div>
   <h2>Find Your Reserved Seat</h2>
-
   <div class="card">
-
-    <p>
-      Every guest has a special place in our story.
-    </p>
-
+    <p>Every guest has a special place in our story.</p>
     <p class="muted">
       Enter your full name to discover your table.
     </p>
-
     <input
       type="text"
       id="guestName"
       placeholder="Enter your full name"
       autocomplete="name"
+      maxlength="120"
       style="
         width:100%;
         max-width:350px;
@@ -558,225 +375,147 @@ header[id] {
         text-align:center;
       "
     >
-
     <br>
-
-    <button class="btn" onclick="findSeat()">
+    <button class="btn" id="seatButton" onclick="findSeat()">
       Find My Seat
     </button>
-
     <div id="seatResult"
          aria-live="polite"
-         style="margin-top:25px;">
+         style="margin-top:25px">
     </div>
-
   </div>
-
 </section>
 
-
 <!-- WEDDING DAY PROGRAMME -->
-
 <section id="programme">
-
   <div class="small">A Day To Remember</div>
-
   <h2>Order of the Day</h2>
-
   <div class="ornament">✦ ─── ✦ ─── ✦</div>
-
   <div class="card">
     <div class="time">10:30 AM</div>
     <p>Solemnisation Ceremony</p>
   </div>
-
   <div class="card">
     <div class="time">11:00 AM</div>
     <p>Guest Arrival &amp; Tea Ceremony</p>
   </div>
-
   <div class="card">
     <div class="time">11:30 AM</div>
     <p>Wedding Lunch Begins</p>
   </div>
-
   <p class="muted">
     Further programme details will be announced.
   </p>
-
 </section>
 
 <!-- LIVE STRING QUARTET -->
-
 <section id="music">
-
   <div class="music-frame">
     <div class="music-inner">
-
-      <div class="small">
-        Live String Quartet
-      </div>
-
+      <div class="small">Live String Quartet</div>
       <h2>The Music of Our Day</h2>
-
-      <div class="ornament">
-        ♫ ─── ✦ ─── ♫
-      </div>
-
+      <div class="ornament">♫ ─── ✦ ─── ♫</div>
       <p class="description italic">
         Every love story has its own melody.
         These are the songs that accompany ours.
       </p>
 
       <div class="music-act">
-
         <h3>ACT I · THE CEREMONY</h3>
-
         <div class="song">
           <div>
             <div class="song-title">Canon in D</div>
-            <div class="song-composer">
-              Johann Pachelbel
-            </div>
+            <div class="song-composer">Johann Pachelbel</div>
           </div>
           <div class="song-number">01</div>
         </div>
-
         <div class="song">
           <div>
-            <div class="song-title">
-              A Thousand Years
-            </div>
-            <div class="song-composer">
-              Christina Perri
-            </div>
+            <div class="song-title">A Thousand Years</div>
+            <div class="song-composer">Christina Perri</div>
           </div>
           <div class="song-number">02</div>
         </div>
-
       </div>
 
       <div class="music-act">
-
         <h3>ACT II · THE CELEBRATION</h3>
-
         <div class="song">
           <div>
             <div class="song-title">
               Can't Help Falling in Love
             </div>
-            <div class="song-composer">
-              Elvis Presley
-            </div>
+            <div class="song-composer">Elvis Presley</div>
           </div>
           <div class="song-number">03</div>
         </div>
-
         <div class="song">
           <div>
             <div class="song-title">Perfect</div>
-            <div class="song-composer">
-              Ed Sheeran
-            </div>
+            <div class="song-composer">Ed Sheeran</div>
           </div>
           <div class="song-number">04</div>
         </div>
-
         <div class="song">
           <div>
             <div class="song-title">Marry You</div>
-            <div class="song-composer">
-              Bruno Mars
-            </div>
+            <div class="song-composer">Bruno Mars</div>
           </div>
           <div class="song-number">05</div>
         </div>
-
       </div>
 
-      <p class="muted" style="margin-top:35px;">
+      <p class="muted" style="margin-top:35px">
         Illustrative repertoire · Subject to confirmation
       </p>
-
     </div>
   </div>
-
 </section>
 
-<!-- DINING PROGRAMME -->
-
+<!-- DINING -->
 <section id="menu">
-
   <div class="small">A Feast To Remember</div>
-
   <h2>The Dining Programme</h2>
-
   <div class="ornament">✦ ─── ✦ ─── ✦</div>
-
   <div class="card">
-    <p>
-      A special six-course celebration awaits.
-    </p>
-
+    <p>A special six-course celebration awaits.</p>
     <p class="muted">
       Our full wedding menu will be revealed here.
     </p>
   </div>
-
 </section>
 
-<!-- PHOTO MEMORIES -->
-
+<!-- MEMORIES -->
 <section id="memories">
-
   <div class="small">Through Your Eyes</div>
-
   <h2>Captured Moments</h2>
-
   <div class="ornament">✦ ─── ♡ ─── ✦</div>
-
   <div class="card">
-    <p>
-      Every smile, every laugh,
-      every little moment.
-    </p>
-
+    <p>Every smile, every laugh, every little moment.</p>
     <p class="muted">
       Share the beautiful moments you capture
       during our wedding day.
     </p>
-
     <p class="muted">
       Photo and video uploads are coming soon.
     </p>
   </div>
-
 </section>
 
 <!-- DIGITAL GUESTBOOK -->
-
 <section id="wishes">
-
   <div class="small">Words From The Heart</div>
-
   <h2>Notes of Love</h2>
-
   <div class="ornament">✦ ─── ♡ ─── ✦</div>
-
   <div class="card">
-    <p>
-      Your love and blessings mean the world to us.
-    </p>
-
+    <p>Your love and blessings mean the world to us.</p>
     <p class="muted">
       Our digital guestbook is coming soon.
     </p>
   </div>
-
 </section>
 
 <!-- FOOTER -->
-
 <footer>
   <p>Lucky 🍀 &amp; Sunshine ☀️</p>
   <p>Nicholas &amp; Yen Ling</p>
@@ -784,107 +523,163 @@ header[id] {
   <p class="small">14 March 2027 · CHIJMES Hall</p>
 </footer>
 
+<!-- GOOGLE SHEETS SEATING CONNECTION -->
 <script>
+const SEATING_API =
+'https://script.google.com/macros/s/AKfycbz0cc2R-Po5kcISgIefqNqakM1smujClnLFXG43OgpXkoFk2EPEkMli5BwwkNNs3Pah/exec';
 
-/* SAMPLE SEATING LIST */
-/* Replace with confirmed guest list later */
+let activeLookup = 0;
 
+function seatMessage(message) {
+  const result = document.getElementById('seatResult');
+  result.replaceChildren();
 
-const seatingList = [
-  { name: "Gabriel Lee", table: "Table 05" },
-  { name: "Amanda Tan", table: "Table 08" },
-  { name: "Daphne Lim", table: "Table 12" }
-];
+  const p = document.createElement('p');
+  p.className = 'muted';
+  p.textContent = message;
+  result.appendChild(p);
+}
 
+function showSeat(guest) {
+  const result = document.getElementById('seatResult');
+  result.replaceChildren();
 
-/* SEARCH FOR GUEST */
+  const panel = document.createElement('div');
+  panel.style.cssText =
+    'border:1px solid #B69A6B;padding:25px;background:#F8F3E9';
+
+  const label = document.createElement('div');
+  label.className = 'small';
+  label.textContent = 'Welcome';
+
+  const name = document.createElement('h2');
+  name.style.margin = '15px 0';
+  name.textContent = guest.name;
+
+  const tableLabel = document.createElement('div');
+  tableLabel.className = 'small';
+  tableLabel.style.marginTop = '20px';
+  tableLabel.textContent = 'YOUR RESERVED TABLE';
+
+  const table = document.createElement('div');
+  table.style.cssText =
+    "font-family:'Playfair Display',serif;" +
+    "font-size:42px;color:#6E302E;margin:12px 0 20px";
+  table.textContent = guest.table;
+
+  const rule = document.createElement('div');
+  rule.style.cssText =
+    'width:90px;height:1px;background:#B69A6B;margin:20px auto';
+
+  const note = document.createElement('p');
+  note.className = 'italic';
+  note.textContent =
+    "A special place awaits you. We're so happy you're here.";
+
+  panel.append(label,name,tableLabel,table,rule,note);
+  result.appendChild(panel);
+}
 
 function findSeat() {
+  const name = document.getElementById('guestName')
+    .value.trim().replace(/\s+/g,' ');
 
-  const input = document.getElementById("guestName");
-  const result = document.getElementById("seatResult");
-
-  const searchName = input.value
-    .trim()
-    .replace(/\s+/g, " ")
-    .toLowerCase();
-
-  if (!searchName) {
-    result.textContent = "Please enter your full name.";
+  if (!name) {
+    seatMessage('Please enter your full name.');
     return;
   }
 
-  const guest = seatingList.find(person =>
-    person.name.toLowerCase() === searchName
-  );
-
-  if (guest) {
-
-    result.innerHTML = `
-      <div style="
-        border:1px solid #B69A6B;
-        padding:25px;
-        background:#F8F3E9;
-      ">
-        <div class="small">Welcome</div>
-
-        <h2 style="margin:15px 0;">
-          ${guest.name}
-        </h2>
-
-        
-<div class="small" style="margin-top:20px;">
-  YOUR RESERVED TABLE
-</div>
-
-<div style="
-  font-family:'Playfair Display',serif;
-  font-size:42px;
-  color:#6E302E;
-  margin:12px 0 20px;
-">
-  ${guest.table}
-</div>
-
-<div style="
-  width:90px;
-  height:1px;
-  background:#B69A6B;
-  margin:20px auto;
-"></div>
-
-<p class="italic">
-  A special place awaits you.
-</p>
-
-
-
-        <p class="italic">
-          We're so happy you're here.
-        </p>
-      </div>
-    `;
-
-  } else {
-
-    result.textContent =
-      "We couldn't find your name. " +
-      "Please check the spelling or ask our reception team.";
-
+  if (name.length > 120) {
+    seatMessage('Please enter a shorter name.');
+    return;
   }
+
+  const id = ++activeLookup;
+  seatMessage('Searching for your reserved table…');
+
+  const button = document.getElementById('seatButton');
+  button.disabled = true;
+
+  const callback = 'weddingSeatCallback_' + id;
+  const script = document.createElement('script');
+
+  let finished = false;
+  let timeout;
+
+  function cleanup() {
+    if (finished) return false;
+    finished = true;
+    clearTimeout(timeout);
+    script.remove();
+    delete window[callback];
+
+    if (id === activeLookup) {
+      button.disabled = false;
+    }
+    return true;
+  }
+
+  window[callback] = function(data) {
+    if (!cleanup() || id !== activeLookup) return;
+
+    if (data && data.status === 'found'
+        && data.name && data.table) {
+      showSeat(data);
+
+    } else if (data && data.status === 'pending') {
+      seatMessage(
+        'Your table has not been assigned yet. ' +
+        'Please check again closer to the celebration.'
+      );
+
+    } else if (data && data.status === 'multiple') {
+      seatMessage(
+        'Please ask our reception team to help confirm your table.'
+      );
+
+    } else if (data &&
+        (data.status === 'not_found' ||
+         data.status === 'not-found')) {
+      seatMessage(
+        "We couldn't find your name. " +
+        "Please check the spelling or ask our reception team."
+      );
+
+    } else {
+      seatMessage(
+        'The seating finder is temporarily unavailable. ' +
+        'Please ask our reception team.'
+      );
+    }
+  };
+
+  script.onerror = function() {
+    if (cleanup() && id === activeLookup) {
+      seatMessage(
+        'Unable to connect right now. Please try again later.'
+      );
+    }
+  };
+
+  timeout = setTimeout(function() {
+    if (cleanup() && id === activeLookup) {
+      seatMessage(
+        'The search took too long. Please try again.'
+      );
+    }
+  },12000);
+
+  script.src = SEATING_API +
+    '?name=' + encodeURIComponent(name) +
+    '&callback=' + encodeURIComponent(callback);
+
+  document.head.appendChild(script);
 }
 
-/* ALLOW ENTER KEY TO SEARCH */
-
-document.getElementById("guestName")
-  .addEventListener("keydown", function(event) {
-
-    if (event.key === "Enter") {
-      findSeat();
-    }
-
+document.getElementById('guestName')
+  .addEventListener('keydown',function(event) {
+    if (event.key === 'Enter') findSeat();
   });
-
 </script>
 
 </body>
