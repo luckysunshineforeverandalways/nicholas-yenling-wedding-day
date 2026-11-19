@@ -6,7 +6,115 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nicholas & Yen Ling | Wedding Day</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-<style>
+
+/* Wedding Day Homepage Refresh */
+:root {
+  --cream: #FAF7F0;
+  --gold: #B49660;
+  --ink: #51483E;
+  --sage: #879481;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  box-shadow: 0 2px 18px rgba(81,72,62,.04);
+}
+
+nav a {
+  padding: 7px 5px;
+  transition: color .2s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+header.hero {
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 85px 20px;
+  background:
+    radial-gradient(circle at 50% 25%,
+      #fffdf8 0%, #f7f0e4 75%);
+}
+
+.hero h1 {
+  font-size: clamp(43px, 7vw, 76px);
+  line-height: 1.18;
+  letter-spacing: -1.5px;
+  max-width: 900px;
+}
+
+.hero .eyebrow {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.hero .ornament {
+  color: var(--gold);
+  font-size: 24px;
+  margin: 22px 0;
+}
+
+.hero .welcome {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(23px, 4vw, 35px);
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.hero .hero-description {
+  max-width: 440px;
+  line-height: 1.9;
+  font-size: 14px;
+  color: #786F63;
+}
+
+.hero .hero-button {
+  margin-top: 24px;
+  padding: 16px 32px;
+  background: var(--sage);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.hero .hero-button:hover {
+  background: #71816D;
+  transform: translateY(-2px);
+}
+
+.hero .venue {
+  margin-top: 45px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+}
+
+@media(max-width:600px) {
+  header.hero {
+    min-height: 82svh;
+    padding: 65px 22px;
+  }
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+  nav a {
+    font-size: 11px;
+    margin: 3px 5px;
+  }
+}
+
+  <style>
 :root{--cream:#faf7f0;--gold:#b49660;--ink:#51483e;--sage:#879481}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,13 +145,44 @@ footer{padding:45px 15px;background:#f0e9de;font-size:13px}
 <a href="#memories">Memories</a>
 <a href="#wishes">Wishes</a>
 </nav>
-<header id="home">
-<div class="small">14 March 2027 · CHIJMES Hall</div>
-<h1>Nicholas <span style="color:#b49660">&amp;</span> Yen Ling</h1>
-<div class="divider">☀ ✧ 🍀</div>
-<p class="subtitle">Welcome to our wedding day.<br>We're so happy you're here to celebrate with us.</p>
-<a class="btn" href="#seating">Explore Our Wedding Day</a>
+
+<header id="home" class="hero">
+
+  <div class="eyebrow">
+    SUNDAY · 14 MARCH 2027
+  </div>
+
+  <h1>
+    Nicholas
+    <span style="color:#B49660">&amp;</span>
+    Yen Ling
+  </h1>
+
+  <div class="ornament">
+    ☀ ✧ 🍀
+  </div>
+
+  <div class="welcome">
+    Welcome to Our Wedding
+  </div>
+
+  <p class="hero-description">
+    Today, our forever begins.
+    <br>
+    Thank you for being part of our story,
+    and for celebrating this beautiful day with us.
+  </p>
+
+  <a href="#seating" class="hero-button">
+    Enter Our Celebration
+  </a>
+
+  <div class="venue">
+    CHIJMES HALL · SINGAPORE
+  </div>
+
 </header>
+
 <section id="seating">
 <div class="small">Your Place At Our Celebration</div>
 <h2>Find My Seat</h2>
